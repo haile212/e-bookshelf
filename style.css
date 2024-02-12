@@ -1,0 +1,176 @@
+
+body{
+  background-image: url('Img/shelf.jpg');
+  display: flex;
+  justify-content: center;
+}
+@import url("https://fonts.googleapis.com/css?family=Muli:900");
+@keyframes tipsy {
+  0% {
+    transform: translateX(-50%) translateY(-50%) rotate(0deg);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-50%) rotate(360deg);
+  }
+}
+.heading {
+  font: 400 1em/1.5 "Neuton";
+  
+  color: rgba(255, 255, 255, .25);
+  text-align: center;
+  justify-content: center;
+  margin-top: 10px;
+
+}
+p {
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  display: inline-block;
+  border: 4px double rgba(255, 255, 255, .25);
+  border-width: 4px 0;
+  padding: 1.5em 0em;
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  width: 40em;
+  margin: 0 0 0 -20em;
+  color: antiquewhite;
+}
+p span {
+  font: 700 4em "Oswald", sans-serif;
+  letter-spacing: 0;
+  padding: 0.25em 0 0.325em;
+  display: block;
+  margin: 0 auto;
+  text-shadow: 0 0 10px rgba(255, 255, 255, .5);
+ 
+}
+/* Animate Background Image */
+@-webkit-keyframes aitf {
+  0% {
+    background-position: 0% 50%;
+ }
+  100% {
+    background-position: 100% 50%;
+ }
+}
+.contain
+{
+  display: block;
+  justify-content: center;
+  align-items: center;
+  margin-top:335px;
+  position: absolute;
+  margin-left: 0%;
+}
+@media (min-width: 1200px)  
+
+{ .contain
+  {
+    margin-top:240px;
+   
+  }
+}  
+
+.bookshelf {
+    width: 1000px;
+    margin: 5rem auto;
+    text-align: center;
+    position: relative;
+    
+    
+  }
+  
+  .book-grid {
+    position: relative;
+    -webkit-transform: translateY(-15px);
+            transform: translateY(-15px);
+    
+  }
+  .book-grid ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .book-grid ul li {
+    justify-self: center;
+  }
+  .book-grid ul img {
+    display: block;
+    
+    box-shadow: 0px -5px 20px 2px rgba(94, 34, 34, 0.3);
+    width: 200px;
+    height: 300px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  
+  .shelf-shadows {
+    position: absolute;
+    background-image: url('Img/wood.jpg');
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1rem;
+    border-radius: 2px;
+    box-shadow: 0px -5px 3px 0px rgba(104, 39, 39, 0.2), 0px 15px 20px 0px rgba(70, 43, 43, 0.7), 0px 5px 5px 0px rgba(99, 61, 61, 0.3);
+  }
+
+  .open{
+    transition: all .3s ease-in-out;
+    transform-origin: left center 0px;
+    transform-style: preserve-3d;
+    overflow: hidden;
+  }
+  
+  .open::after {
+    content: " ";
+    display: block;
+    opacity: 1;
+    width: 200px;
+    height: 300px;
+    /* background-color: olive; */
+    bottom: 0;
+    position: absolute;
+    transition: all .3s ease;
+}
+
+.open::before {
+    content: " ";
+    z-index: 5;
+    display: block;
+    width: 25px;
+    height: 45px;
+    left: 165px;
+    top: -12px;
+    opacity: 0;
+    position: absolute;
+    transition: all .25s;
+    background: url('Img/bookmark.png');
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat; 
+}
+
+.open:hover{
+  transform: rotateY(-25deg) rotateZ(-1deg) scale(1.02);
+  box-shadow: 0px -5px 20px 2px rgba(94, 34, 34, 0.3), 20px 8px 0 #e2e2e2;
+}
+
+.open:hover::after {
+  content: " ";
+  display: block;
+  opacity: 0.3;
+  width: 200px;
+  height: 300px;
+  position: absolute;
+  background: linear-gradient(-180deg, rgba(255, 255, 255, .1) 0%, rgba(255, 255, 255, 0) 60%);
+}
+
+.open:hover::before {
+  transform: translateY(12px);
+  opacity: 1;
+
+}
